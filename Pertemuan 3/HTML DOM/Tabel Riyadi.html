@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABEL HOBI DAN MAKANAN FAVORIT TEMAN</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: aqua;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            border: 1px black solid;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th{
+            background-color: plum;
+        }
+        td{
+            background-color: pink;
+        }
+
+        .orange-button {
+            border: 1px black solid;
+            background-color: rgb(237, 125, 49);
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+
+            10% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+
+            20% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+
+            30% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+
+            40% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+
+            50% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            60% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            70% {
+                transform: translate(3px, 1px) rotate(-1deg);
+            }
+
+            80% {
+                transform: translate(-1px, -1px) rotate(1deg);
+            }
+
+            90% {
+                transform: translate(1px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(1px, -2px) rotate(-1deg);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        @keyframes updown {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            25% {
+                transform: translateY(-10px);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+
+            75% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .table-updown {
+            animation: updown 0.5s ease-in-out infinite;
+        }
+
+        @keyframes width-change {
+
+            0%,
+            100% {
+                width: 100%;
+            }
+
+            50% {
+                width: 120%;
+            }
+        }
+
+        .width-animation {
+            animation: width-change 0.6s ease-in-out infinite;
+        }
+
+        @keyframes rotate-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .rotate-animation {
+            animation: rotate-animation 3s ease-in-out infinite;
+        }
+
+        @keyframes fade-animation {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .fade-animation {
+            animation: fade-animation 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">
+        TABEL HOBI DAN MAKANAN FAVORIT TEMAN
+    </h1>
+    <table id="dataTable">
+        <tr>
+            <th class="nomor">NO</th>
+            <th class="nama">NAMA</th>
+            <th class="hobi">HOBI</th>
+            <th class="makanan">MAKANAN FAVORIT</th>
+            <th class="link">LINK</th>
+        </tr>
+        <tr>
+            <td class="nomor">1</td>
+            <td class="nama">Riyadi Tri Waluya Budi</td>
+            <td class="hobi">Bermain Game Efootball</td>
+            <td class="makanan">Nasi Goreng</td>
+            <td class="link"><button class="orange-button">KUNJUNGI</button></td>
+        </tr>
+        <tr>
+            <td class="nomor">2</td>
+            <td class="nama">Daffi Zayyan</td>
+            <td class="hobi">Bermain Futsal</td>
+            <td class="makanan">Mie Bangladesh</td>
+            <td class="link"><button class="orange-button">KUNJUNGI</button></td>
+        </tr>
+        <tr>
+            <td class="nomor">3</td>
+            <td class="nama">Mohammad Rifqy</td>
+            <td class="hobi">Naik Gunung</td>
+            <td class="makanan">Pecel Ayam</td>
+            <td class="link"><button class="orange-button">KUNJUNGI</button></td>
+        </tr>
+        <tr>
+            <td class="nomor">4</td>
+            <td class="nama">Fauzan Aidil Rama</td>
+            <td class="hobi">Bermain Game Efootball</td>
+            <td class="makanan">Mie Goreng</td>
+            <td class="link"><button class="orange-button">KUNJUNGI</button></td>
+        </tr>
+        <tr>
+            <td class="nomor">5</td>
+            <td class="nama">Mellyna Chang</td>
+            <td class="hobi">Bermain Billiard</td>
+            <td class="makanan">Nasi Rames</td>
+            <td class="link"><button class="orange-button">KUNJUNGI</button></td>
+        </tr>
+    </table>
+    <script>
+        const table = document.getElementById('dataTable');
+
+        const nomorElements = document.querySelectorAll('.nomor');
+        nomorElements.forEach(nomor => {
+            nomor.addEventListener('click', function () {
+                table.classList.add('table-updown');
+                setTimeout(function () {
+                    table.classList.remove('table-updown');
+                }, 3000);
+            });
+        });
+
+        const namaElements = document.querySelectorAll('.nama');
+        namaElements.forEach(nama => {
+            nama.addEventListener('click', function () {
+                table.classList.add('width-animation');
+                setTimeout(function () {
+                    table.classList.remove('width-animation');
+                }, 3000);
+            });
+        });
+
+        const hobiElements = document.querySelectorAll('.hobi');
+        hobiElements.forEach(hobi => {
+            hobi.addEventListener('click', function () {
+                table.classList.add('rotate-animation');
+                setTimeout(function () {
+                    table.classList.remove('rotate-animation');
+                }, 3000);
+            });
+        });
+
+        const makananElements = document.querySelectorAll('.makanan');
+        makananElements.forEach(makanan => {
+            makanan.addEventListener('click', function () {
+                table.classList.add('fade-animation');
+                setTimeout(function () {
+                    table.classList.remove('fade-animation');
+                }, 3000);
+            });
+        });
+
+        const buttons = document.querySelectorAll('.orange-button');
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                button.classList.add('shake');
+                setTimeout(function () {
+                    button.classList.remove('shake');
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+
+</html>
